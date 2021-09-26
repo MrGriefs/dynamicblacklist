@@ -1,54 +1,54 @@
 WEAPONS_EXAMPLE = {
-    'weapon_railgun',
-    'weapon_rayminigun',
-    'weapon_raycarbine',
-    'weapon_raypistol',
+  'weapon_railgun',
+  'weapon_rayminigun',
+  'weapon_raycarbine',
+  'weapon_raypistol',
 }
 
 Restricted = {
-    ['vehicles'] = {
-        -- vehicles that are locked for everyone (including admins)
-        'stockade3',
-        -- vehicles only admins can use
-        ['admin'] = {
-            'admincar2',
-        },
-        -- vehicles only moderators (and above) can use
-        ['moderator'] = {
-            'admincar1',
-        },
+  vehicles = {
+    -- vehicles that are locked for everyone (including admins)
+    'stockade3',
+    -- vehicles only admins can use
+    admin = {
+      'admincar2',
     },
-    
-    ['peds'] = {
-        ['admin'] = {
-            'adminped',
-        },
-        ['moderator'] = {
-            'modped',
-        },
-        'mp_f_stripperlite',
+    -- vehicles only moderators (and above) can use
+    moderator = {
+      'admincar1',
     },
-    
-    ['weapons'] = {
-        -- You can also define your own ace permission
-        ['customAce'] = {},
-        ['moderator'] = {
-            'weapon_railgun',
-            'weapon_rayminigun',
-            'weapon_raycarbine',
-            'weapon_raypistol',
-        },
-        'weapon_minigun',
-        'weapon_snowball',
+  },
+
+  peds = {
+    admin = {
+      'adminped',
     },
+    moderator = {
+      'modped',
+    },
+    'mp_f_stripperlite',
+  },
+
+  weapons = {
+    -- You can also define your own ace permission
+    customAce = {},
+    moderator = {
+      'weapon_railgun',
+      'weapon_rayminigun',
+      'weapon_raycarbine',
+      'weapon_raypistol',
+    },
+    'weapon_minigun',
+    'weapon_snowball',
+  },
 }
 
 -- Banned weapon ammunition types. Only valid for Mk II weapons. See ammotypes.lua
-WeaponAmmoBannedTypes = {} 
+WeaponAmmoBannedTypes = {}
 -- WeaponAmmoBannedTypes = {
---     table.unpack(AmmoFMJ),
---     table.unpack(AmmoAP),
---     table.unpack(AmmoIncendiary),
+--   table.unpack(AmmoFMJ),
+--   table.unpack(AmmoAP),
+--   table.unpack(AmmoIncendiary),
 -- }
 
 -- You can modify the ace prefix here
@@ -66,9 +66,9 @@ VehicleNoSpawn = true
 VehicleDriverBlacklist = true
 
 Inherits = { -- The order to inherit from. You can also do this manually by adding 'add_ace dblacklist.admin dblacklist.moderator allow' etc for each ace
-    'customAce',
-    'admin',
-    'moderator',
+  'customAce',
+  'admin',
+  'moderator',
 }
 
 -- Once done configuring, add 'add_ace group.admin dblacklist.admin'

@@ -7,12 +7,12 @@ description 'FiveM resource for ACE-specific blacklisting.'
 repository 'https://github.com/MrGriefs/dynamicblacklist'
 
 client_scripts {
-    'weapontypes.lua',
-    'config.lua',
-    'client.lua',
+  'weapontypes.lua',
+  'config.lua',
+  'client.lua',
 }
 server_scripts {
-    'weapontypes.lua',
-    'config.lua',
-    'server.lua',
+  'weapontypes.lua',
+  'config.lua',
+  'server.lua',
 }
