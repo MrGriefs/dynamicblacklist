@@ -6,13 +6,13 @@ author 'Reece Stokes <hagen@hyena.gay>'
 description 'FiveM resource for ACE-specific blacklisting.'
 repository 'https://github.com/MrGriefs/dynamicblacklist'
 
-client_scripts {
-  'weapontypes.lua',
+shared_scripts {
+  'ammotypes.lua',
   'config.lua',
+}
+client_scripts {
   'client.lua',
 }
 server_scripts {
-  'weapontypes.lua',
-  'config.lua',
   'server.lua',
 }
