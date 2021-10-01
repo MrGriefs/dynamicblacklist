@@ -50,10 +50,6 @@ Prefix = 'dblacklist'
 -- Instead of a blacklist, you can make this a whitelist
 Inverted = false
 
--- If your server uses a vehicle spawner/menu, enable this to
--- automatically delete blacklisted vehicles a player spawns
-VehicleNoSpawn = true
-
 -- Whether the vehicle blacklist only kicks them from
 -- the vehicle if they're in the driver's seat
 VehicleDriverBlacklist = true
