@@ -1,3 +1,4 @@
+Restricted = nil
 local ClientBlacklist = {
   vehicles = {},
   peds = {},
