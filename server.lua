@@ -5,17 +5,14 @@ local Categories = { 'vehicles', 'peds', 'weapons' }
 for _, category in ipairs(Categories) do
   local restriction = { locked = {} }
   for ace, bl in pairs(Restricted[category]) do
-    if not bl then
-      for _, v in ipairs(ace) do
-        restriction.locked[v] = true
-      end
+    if type(bl) ~= 'table' then
+      restriction.locked[bl] = true
     else
       if not restriction[ace] then
-        restriction[ace] = { [bl] = true }
-      else
-        for _, v in ipairs(bl) do
-          restriction[ace][v] = true
-        end
+        restriction[ace] = {}
+      end
+      for _, hash in pairs(bl) do
+        restriction[ace][hash] = true
       end
     end
   end
@@ -41,9 +38,15 @@ AddEventHandler('dblacklist:getClientBlacklist', function ()
   for category, aces in pairs(restrictions) do
     if not blacklist[category] then blacklist[category] = {} end
     for ace, bl in pairs(aces) do
-      if not IsPlayerAceAllowed(source, Prefix..'.'..ace..'.'..category) then
+      if not (IsPlayerAceAllowed(source, Prefix..'.'..ace) or IsPlayerAceAllowed(source, Prefix..'.'..ace..'.'..category)) then
         for name, _ in pairs(bl) do
-          blacklist[category][GetHashKey(name)] = true
+          if type(name) == 'table' then
+            for name, _ in pairs(bl) do
+              blacklist[category][GetHashKey(name)] = true
+            end
+          else
+            blacklist[category][GetHashKey(name)] = true
+          end
         end
       end
     end
