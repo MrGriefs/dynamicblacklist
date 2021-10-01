@@ -1,10 +1,3 @@
-WEAPONS_EXAMPLE = {
-  'weapon_railgun',
-  'weapon_rayminigun',
-  'weapon_raycarbine',
-  'weapon_raypistol',
-}
-
 Restricted = {
   vehicles = {
     -- vehicles that are locked for everyone (including admins)
