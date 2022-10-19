@@ -71,9 +71,9 @@ end)
 
 -- Weapon blacklist handler
 Citizen.CreateThread(function()
-  local ped = GetPlayerPed(-1)
   while true do
     Citizen.Wait(1000)
+    local ped = GetPlayerPed(-1)
     local _, hash = GetCurrentPedWeapon(ped, true)
     local confirm = ClientBlacklist.weapons[hash] or WeaponAmmoBannedTypes[GetPedAmmoTypeFromWeapon(ped, hash)]
     if Inverted then confirm = not confirm end
